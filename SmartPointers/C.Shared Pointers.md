@@ -132,7 +132,7 @@ struct Son;
 struct Daughter;
 
 struct Mother{
-  ~Mother(){
+  ~Mother(){                //line 10
     std::cout << "Mother gone" << std::endl;
   }
   void setSon(const std::shared_ptr<Son> s ){
@@ -147,7 +147,7 @@ struct Mother{
 
 struct Son{
   Son(std::shared_ptr<Mother> m):myMother(m){}
-  ~Son(){
+  ~Son(){                  //line 25
     std::cout << "Son gone" << std::endl;
   }
   std::shared_ptr<const Mother> myMother;
@@ -164,11 +164,11 @@ struct Daughter{
 int main(){
   std::cout << std::endl;
   {
-    std::shared_ptr<Mother> mother= std::shared_ptr<Mother>( new Mother);
+    std::shared_ptr<Mother> mother= std::shared_ptr<Mother>( new Mother);   //line 41
     std::shared_ptr<Son> son= std::shared_ptr<Son>( new Son(mother) );
     std::shared_ptr<Daughter> daughter= std::shared_ptr<Daughter>( new Daughter(mother) );
     mother->setSon(son);
-    mother->setDaughter(daughter);
+    mother->setDaughter(daughter); //line 47
   }
   std::cout << std::endl;
 }
