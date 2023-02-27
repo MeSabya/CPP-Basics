@@ -1,3 +1,70 @@
+## packing and unpacking multiple values in C++
+
+#### tuple 
+Common C++ data structures like vectors, arrays, priority queues, etc., can contain elements of a single data type. So when we need a data structure that can hold a fixed number of elements of different data types together, tuples are useful, as they may contain any data type, both primitive and abstract data types like string.
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main () {
+    // Declare and initialise tuple.
+    tuple <int, double, char> tp(4, 0.6, 'z');
+    // Print elements.
+    cout << get<0>(tp) << "  " << get<1>(tp) << "  " << get<2>(tp);
+    return 0;
+}
+```
+
+
+
+#### tie
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main () {
+
+    tuple <string, int, bool> tp("sample", 56, false);
+
+    string var1;
+    int var2;
+    bool var3;
+
+    // tie() is used below for unpacking tuple values.
+    tie(var1, var2, var3) = tp;
+
+    cout << "The unpacked values of the tuple elements are:  ";
+    cout << var1 << ",  " << var2 << ",  " << var3;
+
+    return 0;
+}
+```
+👉 We may want to prevent some values from getting unpacked. To do this, we use "ignore" instead of the particular variable as an argument to tie().
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main () {
+
+    tuple <string, int, bool> tp("sample", 56, false);
+
+    string var1;
+    bool var2;
+
+    // tie() is used below for unpacking tuple values, with ignore being used to prevent unpacking of the 2nd element.
+    tie(var1, ignore, var2) = tp;
+
+    cout << "The unpacked values of the tuple elements are:  ";
+    cout << var1 << ",  " << var2;
+
+    return 0;
+}
+```
+
+
 ## How to initialize a 2D matrix with -1
 
 ```cpp
