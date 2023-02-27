@@ -1,3 +1,95 @@
+## How to initialize a 2D matrix with -1
+
+```cpp
+int row= 3;
+    
+vector<vector<int>> dp(row, vector<int>(row, -1));
+```
+    
+
+## max and min numbers in C++
+
+```cpp
+#include <iostream>
+#include <limits>
+ 
+int main()
+{
+    double max = std::numeric_limits<double>::max();
+    double min = std::numeric_limits<double>::min();
+    double inf = std::numeric_limits<double>::infinity();
+ 
+    if (inf > max)
+        std::cout << inf << " is greater than " << max << '\n';
+}
+```
+
+## Sorting an vector of strings
+
+```cpp
+struct MyStruct
+{
+    int key;
+    std::string stringValue;
+
+    MyStruct(int k, const std::string& s) : key(k), stringValue(s) {}
+};
+
+struct less_than_key
+{
+    inline bool operator() (const MyStruct& struct1, const MyStruct& struct2)
+    {
+        return (struct1.key < struct2.key);
+    }
+};
+
+std::vector < MyStruct > vec;
+
+vec.push_back(MyStruct(4, "test"));
+vec.push_back(MyStruct(3, "a"));
+vec.push_back(MyStruct(2, "is"));
+vec.push_back(MyStruct(1, "this"));
+
+std::sort(vec.begin(), vec.end(), less_than_key());
+```
+
+```c++11
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+vector< MyStruct > values;
+
+sort( values.begin( ), values.end( ), [ ]( const MyStruct& lhs, const MyStruct& rhs )
+{
+   return lhs.key < rhs.key;
+});
+```
+```c++14
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+vector< MyStruct > values;
+
+sort( values.begin( ), values.end( ), [ ]( const auto& lhs, const auto& rhs )
+{
+   return lhs.key < rhs.key;
+});
+```
+
+
+
+## finding a word in sentence 
+
+```cpp
+if (s1.find(s2) != std::string::npos) {
+    std::cout << "found!" << '\n';
+}
+```
+
 ## Tokenization in C++
 
 ```cpp
