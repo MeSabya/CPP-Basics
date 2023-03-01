@@ -1,5 +1,5 @@
 ## Some rules while using priority_queue and queue 
-Dont use & while referring to the top element. 
+👉 **Don't use** & while referring to the top element. 
 
 For example: 
 
