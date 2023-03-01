@@ -1,3 +1,19 @@
+## Some important vector operations 
+
+```cpp
+it = std::find (vec.begin(), vec.end(), ser);
+if (it != vec.end())
+{
+    std::cout << "Element " << ser <<" found at position : " ;
+    std::cout << it - vec.begin() << " (counting from zero) \n" ;
+}
+```
+
+```cpp
+ reverse(result.begin(),result.end());
+```
+
+
 ## Some rules while using priority_queue and queue 
 👉 **Don't use** & while referring to the top element. 
 
