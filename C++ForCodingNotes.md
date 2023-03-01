@@ -1,3 +1,15 @@
+## Some rules while using priority_queue and queue 
+Dont use & while referring to the top element. 
+
+For example: 
+
+```cpp
+ auto& obj1 = pq.top();            
+ pq.pop();            
+ auto& obj2 = pq.top();            
+ pq.pop();
+```
+
 ## packing and unpacking multiple values in C++
 
 #### tuple 
