@@ -1,3 +1,21 @@
+## How to initialize a vector of pairs in CPP
+
+```cpp
+
+vector<pair<int, int>> myVec (N, std::make_pair(-1, -1));
+
+std::vector<std::pair<int, int> > vec1 = { {1, 0}, {2,0}, {3,1} };
+
+std::vector<std::pair<int, int> > vec2 = {std::make_pair(1, 0),
+                                           std::make_pair(2, 0),
+                                           std::make_pair(3, 0)};
+      
+```
+
+
+                                           
+
+
 ## Some important vector operations 
 
 ```cpp
