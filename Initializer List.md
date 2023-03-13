@@ -36,3 +36,6 @@ const data members can be initialized only once, so it must be initialized in th
 ### For improving performance
 
 If you are assigning the values inside the body of the constructor, then a temporary object would be created which will be provided to the assignment operator. The temporary object will be destroyed at the end of the assignment statement. Creation of temporary object can be avoided by using initializer list.
+
+## Order of execution in initializer list in C++
+https://www.geeksforgeeks.org/order-of-execution-in-initializer-list-in-c/
