@@ -1,3 +1,10 @@
+## C++ equivalent of Python String Slice?
+
+```cpp
+std::string text = "Apple Pear Orange";
+std::cout << text.substr(6, std::string::npos) << std::endl; // "Pear Orange"
+```
+
 ## How to initialize a vector of pairs in CPP
 
 ```cpp
