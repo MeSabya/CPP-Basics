@@ -226,6 +226,15 @@ if (s1.find(s2) != std::string::npos) {
     }
 ```
 
+If the tokenizer is a space then the code below also works fine:
+
+```cpp
+while (ss >> Word){
+}
+
+where ss is stringstream and word is a temporary string here.
+```
+
 ## Heap in CPP is by default a MAX Heap.
 
 ```cpp
