@@ -1,3 +1,6 @@
+## Trie Implementation in C++
+https://leetcode.com/problems/longest-common-prefix/submissions/918587275/
+
 ## Binary Search functions in C++ STL (binary_search, lower_bound and upper_bound)
 
 https://www.geeksforgeeks.org/binary-search-functions-in-c-stl-binary_search-lower_bound-and-upper_bound/
