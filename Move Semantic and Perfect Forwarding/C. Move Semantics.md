@@ -5,19 +5,28 @@ Containers of the STL can have non-movable elements. The copy semantic is the fa
 
 Let’s learn more about the move semantic.
 
-## std::move#
+## std::move
 The function std::move moves its resource.
 
-Needs the header <utility>.
+Needs the header ```<utility>```
+
 Converts the type of its argument into a rvalue reference.
+
 The compiler applies the move semantic to the rvalue reference.
-Is a static_cast to a rvalue reference under the hood.
+
+It is a static_cast to a rvalue reference under the hood.
+
+```cpp
 static_cast<std::remove_reference<decltype(arg)>::type&&>(arg);
+```
+ 
 What is happening here?
-decltype(arg): deduces the type of the argument.
-std::remove_reference<....> removes all references from the type of the argument.
-static_cast<....>&& adds two references to the type.
- Copy semantic is a fallback for move semantic. This means if we invoke std::move with a non-moveable type, copy-semantic is used because an rvalue can be bound to an rvalue reference and a constant lvalue reference.
+
+- decltype(arg): deduces the type of the argument.
+- std::remove_reference<....> removes all references from the type of the argument.
+- static_cast<....>&& adds two references to the type.
+ 
+Copy semantic is a fallback for move semantic. This means if we invoke std::move with a non-moveable type, copy-semantic is used because an rvalue can be bound to an rvalue reference and a constant lvalue reference.
 
 ## STL#
 Each container of the STL and std::string gets two new methods:
