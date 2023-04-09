@@ -1,3 +1,20 @@
+## How to implement an unordred set of vector of integers?
+```cpp
+unordered_set<vector<int>> ?
+```
+https://stackoverflow.com/a/29855973
+
+As an alternative to a custom-written hasher, Boost provides a hasher for many standard library types. This should work in your case:
+
+```cpp
+#include <boost/container_hash/hash.hpp>
+
+std::unordered_set<
+  std::vector<int>,
+  boost::hash<std::vector<int>>
+> s1;
+```
+
 ## Trie Implementation in C++
 https://leetcode.com/problems/longest-common-prefix/submissions/918587275/
 
