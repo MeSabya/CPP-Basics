@@ -48,13 +48,17 @@ The classical copy constructor and copy assignment operator get their argument a
 User-defined data types can support move and copy semantics as well.
 
 ### Example#
+
+```cpp
 class MyData{
   MyData(MyData&& m) = default;
   MyData& operator = (MyData&& m) = default; 
   MyData(const MyData& m) = default;
   MyData& operator = (const myData& m) = default;
 };
-The move semantic has priority over the copy semantic.
+```
+
+👉 **The move semantic has priority over the copy semantic.**
 
 ## Strategy of the move constructor#
 - Set the attributes of the new object.
