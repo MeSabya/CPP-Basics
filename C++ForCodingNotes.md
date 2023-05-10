@@ -1,3 +1,47 @@
+## Find sum of all values in the map in C++
+
+```cpp
+#include <iostream>
+#include <map>
+#include <numeric>
+ 
+int main()
+{
+    std::map<std::string, int> map = {
+        {"two", 2}, {"one", 1}, {"three", 3}, {"four", 4}, {"five", 5}
+    };
+ 
+    int total_sum = std::accumulate(map.begin(), map.end(), 0,
+                        [](const int prev_sum, const std::pair<std::string, int> &entry) {
+                            return prev_sum + entry.second;
+                        });
+ 
+    std::cout << total_sum << std::endl;        // 15
+ 
+    return 0;
+}
+```
+
+**In C++14**
+
+```cpp
+int main()
+{
+    std::map<std::string, int> map = {
+        {"two", 2}, {"one", 1}, {"three", 3}, {"four", 4}, {"five", 5}
+    };
+ 
+    int total_sum = std::accumulate(map.begin(), map.end(), 0,
+                        [](auto prev_sum, auto &entry) {
+                            return prev_sum + entry.second;
+                        });
+ 
+    std::cout << total_sum << std::endl;        // 15
+ 
+    return 0;
+}
+```
+
 ## How to implement an unordred set of vector of integers?
 ```cpp
 unordered_set<vector<int>> ?
